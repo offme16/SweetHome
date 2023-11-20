@@ -1,0 +1,110 @@
+.container{
+    background-image: url(../../assets/images/topimg.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    width: 100%;
+}
+.container__informbox{
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    padding: 77px 778px 146px 103px; /* Изменили порядок отступов */
+    text-align: left;
+    gap: 50px;
+}
+h2{
+    font-family: Inter;
+    font-size: 58px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 100px;
+    color: #184044;
+}
+
+.infoblock{
+    background-image: url(../../assets/images/serv.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    width: 100%;
+    padding: 147px 262px 122px 350px;
+}
+h3{
+    text-align: center;
+    font-family: Inter;
+    font-size: 70.82px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 90px; /* 127.082% */
+    color: #184044;
+}
+.description__block p{
+    color: #000;
+font-family: Inter;
+font-size: 36px;
+font-style: normal;
+font-weight: 400;
+line-height: 46px; /* 127.778% */
+}
+.description__block{
+    margin-bottom: 20px;
+}
+.block_box{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.block_box__item{
+    padding: 30px;
+    max-width: 400px;
+    min-height: 500px;
+    text-align: center;
+    background-color: aliceblue;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.block_box__item h4{
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 36px;
+    color: #184044;
+}
+.block_box__item span{
+    color: #19949e;
+    letter-spacing: .04em;
+    margin-bottom: 3px;
+    font-size: 16px;
+    font-weight: 700;
+}
+.recomend{
+    padding: 50px 0;
+    background: #F9F6F4;
+}
+.recomend h2{
+    text-align: center;
+    font-family: Inter;
+    font-size: 70.676px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 84px; 
+    letter-spacing: -1.48px;
+    color: #19949E;
+}
+.recomend img{
+    margin-top: 20px;
+   width: 872px;
+   height: 600px; 
+}
+.slider__box{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 600px;
+    margin: 0 auto;
+}
+.slider{
+    padding: 50px 0;
+}
