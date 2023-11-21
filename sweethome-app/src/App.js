@@ -3,6 +3,7 @@ import "./App.css";
 import { Header } from "./components/header/Header";
 import Main from "./pages/main/Main";
 import { Footer } from "./components/footer/Footer";
+import Price from "./pages/price/Price";
 
 function App() {
   return (
@@ -10,8 +11,8 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/main" element={<Main />} />
-          <Route />
+          <Route exact path="/" element={<Main />} />
+          <Route path="/price" element={<Price />} />
         </Routes>
         <Footer />
       </BrowserRouter>

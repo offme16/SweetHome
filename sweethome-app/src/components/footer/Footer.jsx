@@ -5,14 +5,14 @@ export const Footer = () => {
     return (
         <footer className={style.footer}>
             <div className={style.footer__box}>
-            <NavLink to={'/main'}><div className={style.footer__logo}>
+            <NavLink to={'/'}><div className={style.footer__logo}>
                 <img src={icon} alt="images"/>
                 <h2>SweetHome</h2>
             </div></NavLink>
             <nav className={style.footer__navigate}>
                 <ul>
-                    <NavLink to={``}><li>Подписки</li></NavLink>
-                    <NavLink to={``}><li>Наши услуги</li></NavLink>
+                    <NavLink to={`/price`}><li>Подписки</li></NavLink>
+                    <NavLink to={`/service`}><li>Наши услуги</li></NavLink>
                 </ul>
             </nav>
             </div>
