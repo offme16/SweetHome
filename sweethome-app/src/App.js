@@ -4,6 +4,9 @@ import { Header } from "./components/header/Header";
 import Main from "./pages/main/Main";
 import { Footer } from "./components/footer/Footer";
 import Price from "./pages/price/Price";
+import Service from "./pages/service/Service";
+import Login from "./pages/login/Login";
+import Auth from "./pages/auth/Auth";
 
 function App() {
   return (
@@ -13,6 +16,9 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Main />} />
           <Route path="/price" element={<Price />} />
+          <Route path="/service" element={<Service />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/auth" element={<Auth />} />
         </Routes>
         <Footer />
       </BrowserRouter>

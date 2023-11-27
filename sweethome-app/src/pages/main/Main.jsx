@@ -52,8 +52,7 @@ const Main = () => {
                 <h2>Наши подписчики</h2>
                 <div className={style.slider__box}>
                     <SimSlider />
-                </div>
-                    
+                </div>  
             </section>
         </div>
         

@@ -1,0 +1,18 @@
+.faq_item {
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  
+  .question {
+    cursor: pointer;
+  }
+  
+  .answerContainer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.8s ease-in-out;
+  }
+  
+  .showAnswer {
+    max-height: 500px; /* или другое подходящее значение */
+  }

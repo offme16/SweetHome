@@ -1,0 +1,79 @@
+.top_descr p{
+    text-align: center;
+    max-width: 700px;
+
+}
+.top_descr{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+.main_information{
+    max-width: 1340px;
+    margin: auto;
+}
+.main_information__box{
+    border-radius: 3px;
+    border-top: 4px solid #19949E;;
+    padding: 40px 0 60px 0;
+    display: flex;
+    gap: 30px;
+    align-items: self-start;
+
+}
+.main_information__box h5{
+    font-family: Inter;
+    font-size: 24.578px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 36px; /* 146.472% */
+    color: #184044;
+}
+.box_item h4{
+    font-family: Inter;
+    font-size: 32.141px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 42px; /* 130.676% */
+    color: #19949E;
+}
+.box_item{
+    padding: 50px 60px 60px 30px;
+    width: 320px;
+    height: 400px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: #F9F6F4;
+}
+.box_item img{
+    width: 138px;
+    height: 130px;
+}
+.box_list{
+    font-family: Inter;
+    font-size: 18.75px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px; /* 133.333% */
+    color: #6A7677;
+    text-align: left;
+}
+.box_list li::before{
+    content: '';
+    background-image: url(../../assets/images/checkpoint.png);
+    width: 18px;
+    height: 18px;
+    background-size: 15px 15px;
+    margin: 8px 5px 0 5px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    background-position: 0 3px;
+}
+.faq{
+    max-width: 700px;
+    margin: auto;
+}
