@@ -5,13 +5,18 @@ import {useForm} from "react-hook-form"
 const Login = () => {
     const {
         register,
+        watch,
         formState:{
             errors,
         },
         handleSubmit,
-    } = useForm();
+        reset,
+    } = useForm({
+      mode: "onBlur"
+    });
     const onSubmit = (data) =>{
         alert(JSON.stringify(data))
+        reset();
     }
   return (
     <div className={style.container}>
@@ -20,13 +25,27 @@ const Login = () => {
       <p className={style.message}>Зарегистрируйтесь сейчас и получите полный доступ к нашему приложению.</p>
       <div className={style.flex}>
           <input {...register("name", {required: true})} placeholder="Имя" type="text" className={style.input} /> 
-          <input required="" placeholder="Фамиллия" type="text" className={style.input} />
+          <input {...register("secname", {required: true})} placeholder="Фамиллия" type="text" className={style.input} />
       </div>
         <input required="" placeholder="Email" type="email" className={style.input} />
-        <input required="" placeholder="Пароль" type="password" className={style.input} />
-        <input required="" placeholder="Подтвердите пароль" type="password" className={style.input} />
-        <div>{errors?.name && <span>Все поля должны быть заполнены!</span>}</div>
-      <Button>Зарегистрироваться</Button>
+        <input {...register("pass", {
+          required: true,
+          minLength: 8,
+          pattern: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
+        })} placeholder="Пароль" type="password" className={style.input} />
+        <input
+          {...register("confirmPassword", {
+           required: true,
+           validate: (value) => value === watch("pass"),
+          })}
+          placeholder="Подтвердите пароль"
+          type="password"
+          className={style.input}/>
+          <div>{errors?.confirmPassword && <span>Пароли должны совпадать!</span>}</div>
+          <div>
+            {errors.name && errors.secname && <span>Все поля должны быть заполнены!</span>}
+          </div>
+      <Button >Зарегистрироваться</Button>
       <p className={style.signin}>
       У вас уже есть учетная запись?<Link to={'/auth'}>Авторизоваться</Link>
       </p>

@@ -2,7 +2,7 @@ import style from "./Price.module.css";
 import curve from "../../assets/images/curveprice.svg"
 import curvew from "../../assets/images/curvewhite.svg"
 import foto from "../../assets/images/shild.png"
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 const Price = () => {
     return (
         <div className={style.container}>
@@ -29,7 +29,7 @@ const Price = () => {
                     </div>
                    
                 </div>
-                <NavLink to={'./login'}><button className={style.btn}>Начать</button></NavLink>
+                <Link to={'/login'}><button className={style.btn}>Начать</button></Link>
                 <div className={style.list}>
                 <ul>
                     <li>Один опытный, проверенный мастер</li>
