@@ -2,7 +2,10 @@ import style from "./Header.module.css";
 import icon from "../../assets/images/homeicon.svg"
 import { Button } from "../UI/Button";
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 export const Header = () => {
+    const [isAuth, setIsAuth] = useState(true);
+
     return (
         <header className={style.header}>
             <NavLink to={'/'}><div className={style.header__logo}>
@@ -13,7 +16,7 @@ export const Header = () => {
                 <ul>
                     <NavLink to={`/price`}><li>Подписки</li></NavLink>
                     <NavLink to={`/service`}><li>Наши услуги</li></NavLink>
-                    <NavLink to={`/login`}><Button>Регистрация</Button></NavLink>
+                    {isAuth ? <NavLink to={`/cabinet`}><Button>Личный кабинет</Button></NavLink> : <NavLink to={`/login`}><Button>Регистрация</Button></NavLink>}
                 </ul>
             </nav>
         </header>

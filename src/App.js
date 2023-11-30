@@ -7,6 +7,7 @@ import Price from "./pages/price/Price";
 import Service from "./pages/service/Service";
 import Login from "./pages/login/Login";
 import Auth from "./pages/auth/Auth";
+import PersonalArea from "./pages/personalarea/PersonalArea";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/service" element={<Service />} />
           <Route path="/login" element={<Login />} />
           <Route path="/auth" element={<Auth />} />
+          <Route path="/cabinet" element={<PersonalArea />} />
         </Routes>
         <Footer />
       </BrowserRouter>
