@@ -105,7 +105,7 @@ const Service = () => {
             </div>
             <div className={style.faq}>
                 <h2>Часто задаваемые вопросы</h2>
-            <Faq />
+                    <Faq />
             </div>
             
         </div>

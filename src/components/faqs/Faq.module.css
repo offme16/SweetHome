@@ -1,18 +1,30 @@
-.faq_item {
-    margin-bottom: 10px;
-    text-align: left;
-  }
-  
-  .question {
-    cursor: pointer;
-  }
-  
-  .answerContainer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.8s ease-in-out;
-  }
-  
-  .showAnswer {
-    max-height: 500px; /* или другое подходящее значение */
-  }
+.faqItem {
+  border: none;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition:0.7s ease;
+}
+
+.question {
+  padding: 10px;
+  font-weight: bold;
+  text-align: left;
+  font-size: 20px;
+  transition:0.7s ease;
+  border-radius: 24px;
+
+}
+.question:hover{
+  background-color: #19949E;
+}
+.answer {
+  padding: 10px;
+  background-color: #fff;
+  text-align: left;
+  color:#6a7677;
+  font-family: Inter;
+  font-size: 18.75px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px;
+}

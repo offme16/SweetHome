@@ -45,7 +45,7 @@ const Main = () => {
 
             <section className={style.recomend}>
                 <h2>SweetHome - лучший выбор.</h2>
-                <p>Присоединяйтесь к более чем 1 000 домовладельцев, которые экономят<br /> время, деньги и стресс с помощью Honey Homes.</p>
+                <p>Присоединяйтесь к более чем 1 000 домовладельцев, которые экономят<br /> время, деньги и стресс с помощью SweetHomes.</p>
                 <img src={im} alt="images"/>
             </section>
             <section className={style.slider}>

@@ -28,7 +28,7 @@
     font-size: 24.578px;
     font-style: normal;
     font-weight: 500;
-    line-height: 36px; /* 146.472% */
+    line-height: 36px;
     color: #184044;
 }
 .box_item h4{
@@ -36,7 +36,7 @@
     font-size: 32.141px;
     font-style: normal;
     font-weight: 700;
-    line-height: 42px; /* 130.676% */
+    line-height: 42px;
     color: #19949E;
 }
 .box_item{
@@ -58,7 +58,7 @@
     font-size: 18.75px;
     font-style: normal;
     font-weight: 400;
-    line-height: 25px; /* 133.333% */
+    line-height: 25px;
     color: #6A7677;
     text-align: left;
 }
@@ -74,6 +74,6 @@
     background-position: 0 3px;
 }
 .faq{
-    max-width: 700px;
+    max-width: 900px;
     margin: auto;
 }
