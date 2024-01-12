@@ -2,7 +2,8 @@
     height: 80px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 0 50px;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
     background: #FFF;
     z-index: 999;

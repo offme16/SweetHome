@@ -35,7 +35,6 @@ const Auth = () => {
           onChange={(e) => setUsername(e.target.value)}
           className={style.input}
         />
-        <div>{errors?.email && <span>Поле должно быть заполнено!</span>}</div>
         <input
           {...register("pass", {
             required: true,

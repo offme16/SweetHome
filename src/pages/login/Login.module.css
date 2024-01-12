@@ -62,7 +62,7 @@ span{
 .signin {
     text-align: center;
   }
-  
+
 .signin a {
     color: royalblue;
   }
@@ -76,7 +76,7 @@ span{
     width: 100%;
     gap: 6px;
   }  
-.input {
+.input, .input_num {
     width: 100%;
     padding: 10px;
     outline: 0;
@@ -93,4 +93,9 @@ span{
       transform: scale(1.8);
       opacity: 0;
     }
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
   }

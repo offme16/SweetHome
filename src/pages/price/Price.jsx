@@ -3,7 +3,9 @@ import curve from "../../assets/images/curveprice.svg"
 import curvew from "../../assets/images/curvewhite.svg"
 import foto from "../../assets/images/shild.png"
 import { Link } from "react-router-dom";
+import ScrollToTop from "../../services/scroll";
 const Price = () => {
+    ScrollToTop();
     return (
         <div className={style.container}>
             <div className={style.slogan}>

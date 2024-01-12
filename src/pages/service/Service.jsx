@@ -3,7 +3,9 @@ import img1 from '../../assets/images/serv1.png'
 import img2 from '../../assets/images/services2.png'
 import img3 from '../../assets/images/services3.png'
 import { Faq } from "../../components/faqs/Faq";
+import ScrollToTop from "../../services/scroll";
 const Service = () => {
+    ScrollToTop();
     return (
         <div>
             <div className={style.top_descr}>

@@ -27,7 +27,10 @@ const Login = () => {
           <input {...register("name", {required: true})} placeholder="Имя" type="text" className={style.input} /> 
           <input {...register("secname", {required: true})} placeholder="Фамиллия" type="text" className={style.input} />
       </div>
+      <input {...register("surname", {required: true})} placeholder="Отчество" type="text" className={style.input} />
         <input required="" placeholder="Email" type="email" className={style.input} />
+        <input required="" placeholder="Телефон" type="number" className={style.input} />
+        <input required="" placeholder="Адрес" type="text" className={style.input} />
         <input {...register("pass", {
           required: true,
           minLength: 8,
@@ -43,7 +46,7 @@ const Login = () => {
           className={style.input}/>
           <div>{errors?.confirmPassword && <span>Пароли должны совпадать!</span>}</div>
           <div>
-            {errors.name && errors.secname && <span>Все поля должны быть заполнены!</span>}
+            {errors.name && errors.secname && errors.surname && <span>Все поля должны быть заполнены!</span>}
           </div>
       <Button >Зарегистрироваться</Button>
       <p className={style.signin}>

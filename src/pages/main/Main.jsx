@@ -3,7 +3,9 @@ import style from "./Main.module.css";
 import im from "../../assets/images/group.png"
 import SimSlider from "../../components/slider/SimSlider";
 import { NavLink } from "react-router-dom";
+import ScrollToTop from "../../services/scroll";
 const Main = () => {
+    ScrollToTop();
     return(
         <div>
             <section className={style.container}>
