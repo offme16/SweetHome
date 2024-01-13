@@ -1,4 +1,4 @@
-import { Button } from "../../components/UI/Button";
+import { Button } from "../../components/UI/MyButton/Button";
 import style from "./Main.module.css";
 import im from "../../assets/images/group.png"
 import SimSlider from "../../components/slider/SimSlider";

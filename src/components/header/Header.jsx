@@ -1,6 +1,6 @@
 import style from "./Header.module.css";
 import icon from "../../assets/images/homeicon.svg"
-import { Button } from "../UI/Button";
+import { Button } from "../UI/MyButton/Button";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 export const Header = () => {

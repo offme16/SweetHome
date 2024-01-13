@@ -1,4 +1,4 @@
-import { Button } from "../../components/UI/Button";
+import { Button } from "../../components/UI/MyButton/Button";
 import style from "./Auth.module.css";
 import { useForm } from "react-hook-form";
 import { useState } from "react";

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Button } from "../../components/UI/Button";
+import { Button } from "../../components/UI/MyButton/Button";
 import style from "./Login.module.css";
 import {useForm} from "react-hook-form"
 const Login = () => {

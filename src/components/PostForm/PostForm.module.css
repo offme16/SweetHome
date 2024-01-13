@@ -1,0 +1,30 @@
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;  
+}
+h3{
+    line-height: 35px;
+}
+input, textarea{
+    width: 100%;
+    padding: 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+    color: #6a7677;
+    font-family: National2,sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+}
+
+textarea{
+    resize: none;
+}
+
+
+.minInput{
+    display: flex;
+    gap: 10px;
+}
