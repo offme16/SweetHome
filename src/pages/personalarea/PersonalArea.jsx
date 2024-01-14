@@ -17,9 +17,12 @@ const PersonalArea = () => {
   return (
     <div className={style.container}>
       <h2>Личный кабинет</h2>
-        <Button onClick={() => setModal(true)}>Сообщить о проблеме</Button>
-        <MyModal visible={modal} setVisible={setModal}><PostForm create={createPost}/></MyModal>
+        <div className={style.records}>
+          <p>Все обращения</p>
+          <Button onClick={() => setModal(true)}>Сообщить о проблеме</Button>
+        </div>
         <PostList />
+        <MyModal visible={modal} setVisible={setModal}><PostForm create={createPost}/></MyModal>
     </div>
   );
 };

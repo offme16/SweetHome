@@ -1,0 +1,50 @@
+.container{
+    max-width: 1140px;
+    margin: auto;
+    border-bottom: 1px solid #6a7677;
+    margin-bottom: 10px;
+}
+.record_item{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+
+span{
+    color: #19949E;
+    font-family: National2,sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+}
+.record_info{
+    display: flex;
+    flex-direction: column;
+}
+.record_info__div{
+    display: flex;
+    gap: 5px;
+    text-align: start;
+}
+.record_item__btn{
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.rotate{
+    transform: rotate(180deg);
+}
+.record_main_info{
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    text-align: left;
+}
+
+.visible{
+    height: 100px;
+    padding: 20px 10px;
+    text-align: left;
+}

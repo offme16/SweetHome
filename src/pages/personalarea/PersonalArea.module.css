@@ -7,4 +7,17 @@
 h3{
     font-size: 30px;
 }
-
+.records{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 50px;
+    align-items: center;
+}
+.records p:hover{
+    border-radius: 36px;
+    background: rgb(230, 230, 230);
+}
+.records p{
+    color: #000;
+    padding: 4px 10px;
+}
