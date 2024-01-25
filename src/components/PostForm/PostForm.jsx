@@ -26,7 +26,7 @@ const PostForm = ({create}) => {
                         selected={problem.date}
                         onChange={(date) => setProblem({ ...problem, date })}
                         placeholderText="Выберите дату"
-                        dateFormat="dd-MM-yyyy"
+                        dateFormat="dd/MM/yyyy"
                     />
                 </div>
                     <textarea

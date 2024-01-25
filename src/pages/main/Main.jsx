@@ -4,8 +4,18 @@ import im from "../../assets/images/group.png"
 import SimSlider from "../../components/slider/SimSlider";
 import { NavLink } from "react-router-dom";
 import ScrollToTop from "../../services/scroll";
+import { useEffect } from "react";
+import { getById } from "../../services/AsyncAction/user";
+
 const Main = () => {
     ScrollToTop();
+    useEffect( () => {
+        const fetchUser = async () => {
+            return await getById();
+        }
+        fetchUser();
+    },[])
+
     return(
         <div>
             <section className={style.container}>
@@ -54,8 +64,9 @@ const Main = () => {
                 <h2>Наши подписчики</h2>
                 <div className={style.slider__box}>
                     <SimSlider />
-                </div>  
+                </div> 
             </section>
+
         </div>
         
     )

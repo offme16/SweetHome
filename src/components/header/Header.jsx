@@ -4,14 +4,15 @@ import { Button } from "../UI/MyButton/Button";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 export const Header = () => {
-    const [isAuth, setIsAuth] = useState(true);
+    const [isAuth, setIsAuth] = useState(false);
 
     return (
         <header className={style.header}>
-            <NavLink to={'/'}><div className={style.header__logo}>
-                <img src={icon} alt="images"/>
-                <h1>SweetHome</h1>
-            </div></NavLink>
+            <NavLink to={'/'}>
+                <div className={style.header__logo}>
+                    <img src={icon} alt="images"/>
+                    <h1>SweetHome</h1>
+                </div></NavLink>
             <nav className={style.header__navigate}>
                 <ul>
                     <NavLink to={`/price`}><li>Подписки</li></NavLink>

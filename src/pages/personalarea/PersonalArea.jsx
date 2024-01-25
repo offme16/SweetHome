@@ -18,7 +18,7 @@ const PersonalArea = () => {
     <div className={style.container}>
       <h2>Личный кабинет</h2>
         <div className={style.records}>
-          <p>Все обращения</p>
+          <p>Мои обращения</p>
           <Button onClick={() => setModal(true)}>Сообщить о проблеме</Button>
         </div>
         <PostList />
