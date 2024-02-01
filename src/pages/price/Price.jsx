@@ -26,7 +26,7 @@ const Price = () => {
                         <p>От 10`000 рублей в месяц, 120`000 рублей в год оплачиваются авансом. Сэкономьте два месяца!</p>
                     </div>                   
                 </div>
-                <Link to={'/login'}><button className={style.btn}>Начать</button></Link>
+                <Link to={'/registration'}><button className={style.btn}>Начать</button></Link>
                 <div className={style.list}>
                 <ul>
                     <li>Один опытный, проверенный мастер</li>

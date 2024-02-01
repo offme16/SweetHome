@@ -9,12 +9,12 @@ import { getById } from "../../services/AsyncAction/user";
 
 const Main = () => {
     ScrollToTop();
-    useEffect( () => {
+    /*useEffect( () => {
         const fetchUser = async () => {
             return await getById();
         }
         fetchUser();
-    },[])
+    },[])*/
 
     return(
         <div>

@@ -3,12 +3,20 @@ import DatePicker from "react-datepicker";
 import { Button } from "../UI/MyButton/Button"
 import style from "./PostForm.module.css"
 import "react-datepicker/dist/react-datepicker.css";
+import axios from "axios";
 const PostForm = ({create}) => {
     const [problem, setProblem] = useState({title: '', date: null, body: ''})
 
-    const send = () => {
-        console.log(problem)
+    const send = async () => {
+        const response = await axios.post(`https://localhost:7045/Problem/createproblem`,{
+            problem: "strfdfsdfdsfsding",
+            description: "SSSSstrfdsfsing",
+            dateOfSolution: "2024-02-26T20:03:40.883Z",
+            userId: "e6b30e7a-dc34-4c99-852c-0e8811afe206"
+        })
+        console.log(response)
         setProblem({title: "", date: null, body: ""})
+
         create();
     }
 

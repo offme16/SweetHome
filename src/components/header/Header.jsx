@@ -2,10 +2,9 @@ import style from "./Header.module.css";
 import icon from "../../assets/images/homeicon.svg"
 import { Button } from "../UI/MyButton/Button";
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useSelector } from "react-redux";
 export const Header = () => {
-    const [isAuth, setIsAuth] = useState(false);
-
+    const { userId } = useSelector((state) => state.registration);
     return (
         <header className={style.header}>
             <NavLink to={'/'}>
@@ -17,7 +16,8 @@ export const Header = () => {
                 <ul>
                     <NavLink to={`/price`}><li>Подписки</li></NavLink>
                     <NavLink to={`/service`}><li>Наши услуги</li></NavLink>
-                    {isAuth ? <NavLink to={`/cabinet`}><Button>Личный кабинет</Button></NavLink> : <NavLink to={`/login`}><Button>Регистрация</Button></NavLink>}
+                    {userId ? <NavLink to={`/cabinet`}><Button>Личный кабинет</Button>
+                    </NavLink> : <NavLink to={`/registration`}><Button>Регистрация</Button></NavLink>}
                 </ul>
             </nav>
         </header>
