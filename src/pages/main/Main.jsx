@@ -3,18 +3,10 @@ import style from "./Main.module.css";
 import im from "../../assets/images/group.png"
 import SimSlider from "../../components/slider/SimSlider";
 import { NavLink } from "react-router-dom";
-import ScrollToTop from "../../services/scroll";
-import { useEffect } from "react";
-import { getById } from "../../services/AsyncAction/user";
+import ScrollToTop from "../../assets/scroll";
 
 const Main = () => {
     ScrollToTop();
-    /*useEffect( () => {
-        const fetchUser = async () => {
-            return await getById();
-        }
-        fetchUser();
-    },[])*/
 
     return(
         <div>

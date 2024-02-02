@@ -8,8 +8,15 @@ import Service from "./pages/service/Service";
 import Registration from "./pages/registration/Registration";
 import Auth from "./pages/auth/Auth";
 import PersonalArea from "./pages/personalarea/PersonalArea";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { userActions } from "./store/userSlice";
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(userActions.initAuthData());
+  }, []);
   return (
     <BrowserRouter>
       <div className="App">

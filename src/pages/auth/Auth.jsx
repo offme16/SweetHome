@@ -1,12 +1,21 @@
+import React, { useCallback } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Button } from "../../components/UI/MyButton/Button";
 import style from "./Auth.module.css";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { loginUser } from "../../services/AsyncAction/login";
+import { loginUser } from "../../store/services/loginUser";
+import { authActions } from "../../store/authenticationSlice";
 
 const Auth = () => {
-  const navigate = useNavigate()
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const authData = useSelector((state) => state.authentication);
+
+  const handleField = useCallback((value, fieldName) => {
+    dispatch(authActions.setField({ value, fieldName }));
+  }, [dispatch]);
+
   const {
     register,
     formState: { errors },
@@ -15,20 +24,38 @@ const Auth = () => {
     mode: "onBlur",
   });
 
-  const onSubmit = (data) => {
-    loginUser(data);
-    navigate("/cabinet");
-  };
+  const onSubmit = useCallback(
+    async () => {
+      try {
+        const result = await dispatch(loginUser(authData));
+
+        if (result.meta.requestStatus === "rejected") {
+          alert("Произошла ошибка: " + result.payload);
+        } else {
+          navigate("/cabinet");
+        }
+      } catch (error) {
+        console.error("Произошла ошибка:", error);
+        alert("Произошла ошибка при входе!");
+      }
+    },
+    [dispatch, navigate, authData]
+  );
 
   return (
     <div className={style.container}>
-      <form className={style.form} method="post" onSubmit={handleSubmit(onSubmit)}>
+      <form
+        className={style.form}
+        method="post"
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <p className={style.title}>Войти</p>
         <input
           {...register("userName", { required: true })}
           placeholder="Имя пользователя"
           type="text"
           className={style.input}
+          onChange={(e) => handleField(e.target.value, "username")}
         />
         <input
           {...register("password", {
@@ -37,6 +64,7 @@ const Auth = () => {
           placeholder="Пароль"
           type="password"
           className={style.input}
+          onChange={(e) => handleField(e.target.value, "password")}
         />
         <div className={style.error}>
           {errors?.password && <em>!</em>}
@@ -48,3 +76,4 @@ const Auth = () => {
 };
 
 export default Auth;
+

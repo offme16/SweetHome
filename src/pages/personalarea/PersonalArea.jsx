@@ -2,16 +2,12 @@ import { useEffect, useState } from "react";
 import style from "./PersonalArea.module.css";
 import MyModal from "../../components/UI/MyModal/MyModal";
 import { Button } from "../../components/UI/MyButton/Button";
-import ScrollToTop from "../../services/scroll";
+import ScrollToTop from "../../assets/scroll";
 import PostForm from "../../components/PostForm/PostForm";
 import PostList from "../../components/postList/PostList";
 const PersonalArea = () => {
-  /*useEffect(() => {
-    localStorage.setItem('USer', 'hui')
-    localStorage.clear()
-  })*/
   const obj = [
-    {
+    /*{
         id: "0",
         title: "Течет кран",
         date: "18-02-2023",
@@ -52,7 +48,7 @@ const PersonalArea = () => {
         title: "Нет интернета",
         date: "03-03-2024",
         body: "Отсутствует интернет, проверьте соединение и оборудование.",
-      }
+      }*/
   ];
     const [modal, setModal] = useState(false);
 

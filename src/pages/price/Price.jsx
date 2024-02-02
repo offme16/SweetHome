@@ -3,7 +3,7 @@ import curve from "../../assets/images/curveprice.svg"
 import curvew from "../../assets/images/curvewhite.svg"
 import foto from "../../assets/images/shild.png"
 import { Link } from "react-router-dom";
-import ScrollToTop from "../../services/scroll";
+import ScrollToTop from "../../assets/scroll";
 const Price = () => {
     ScrollToTop();
     return (
