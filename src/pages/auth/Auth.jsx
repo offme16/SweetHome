@@ -32,7 +32,7 @@ const Auth = () => {
         if (result.meta.requestStatus === "rejected") {
           alert("Произошла ошибка: " + result.payload);
         } else {
-          navigate("/cabinet");
+          navigate("/");
         }
       } catch (error) {
         console.error("Произошла ошибка:", error);
@@ -67,7 +67,7 @@ const Auth = () => {
           onChange={(e) => handleField(e.target.value, "password")}
         />
         <div className={style.error}>
-          {errors?.password && <em>!</em>}
+          {errors?.password && <em>Л</em>}
         </div>
         <Button>Войти</Button>
       </form>

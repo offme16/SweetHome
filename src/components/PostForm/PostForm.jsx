@@ -1,50 +1,66 @@
-import { useState } from "react"
+import {  useState } from "react";
 import DatePicker from "react-datepicker";
-import { Button } from "../UI/MyButton/Button"
-import style from "./PostForm.module.css"
+import { Button } from "../UI/MyButton/Button";
+import style from "./PostForm.module.css";
 import "react-datepicker/dist/react-datepicker.css";
-import axios from "axios";
-const PostForm = ({create}) => {
-    const [problem, setProblem] = useState({title: '', date: null, body: ''})
+import { addProblem } from "../../store/services/addProblem";
+import { useDispatch, useSelector } from "react-redux";
 
-    const send = async () => {
-        const response = await axios.post(`https://localhost:7045/Problem/createproblem`,{
-            problem: "strfdfsdfdsfsding",
-            description: "SSSSstrfdsfsing",
-            dateOfSolution: "2024-02-26T20:03:40.883Z",
-            userId: "e6b30e7a-dc34-4c99-852c-0e8811afe206"
-        })
-        console.log(response)
-        setProblem({title: "", date: null, body: ""})
-
-        create();
+const PostForm = ({ create }) => {
+  const [problemData, setProblemData] = useState({
+    problem: "",
+    date: null,
+    description: "",
+  });
+  const userID = useSelector(state => state.user.userID);
+  const dispatch = useDispatch();
+  const send = async () => {
+    try {
+      dispatch(addProblem({ problemData, userID }));
+      clearInput();
+      await create();
+    } catch (error) {
+      console.error("Ошибка при отправке данных:", error);
     }
+  };
 
-    return(
-        <div>
-            <form onClick={e => e.preventDefault()}>
-                <h3>Сообщить о проблеме</h3>
-                <div className={style.minInput}>
-                    <input
-                        value = { problem.title } 
-                        onChange = { e => setProblem({ ...problem, title: e.target.value })} 
-                        placeholder="Ваша проблема" type="text" 
-                    />
-                    <DatePicker
-                        selected={problem.date}
-                        onChange={(date) => setProblem({ ...problem, date })}
-                        placeholderText="Выберите дату"
-                        dateFormat="dd/MM/yyyy"
-                    />
-                </div>
-                    <textarea
-                        value = { problem.body }
-                        onChange={ e => setProblem({ ...problem, body: e.target.value })}
-                        placeholder="Пожалуйста, опишите проблему" cols="30" rows="8">
-                    </textarea>
-                    <Button onClick={send}>Отправить</Button>
-            </form>
+  function clearInput() {
+    setProblemData({ problem: "", date: null, description: "" });
+  }
+
+  return (
+    <div>
+      <form onClick={e => e.preventDefault()}>
+        <h3>Сообщить о проблеме</h3>
+        <div className={style.minInput}>
+          <input
+            value={problemData.problem}
+            onChange={(e) =>
+              setProblemData({ ...problemData, problem: e.target.value })
+            }
+            placeholder="Ваша проблема"
+            type="text"
+          />
+          <DatePicker
+            selected={problemData.date}
+            onChange={(date) => setProblemData({ ...problemData, date })}
+            placeholderText="Выберите дату"
+            dateFormat="dd/MM/yyyy"
+          />
         </div>
-    )
-}
+        <textarea
+          value={problemData.description}
+          onChange={(e) =>
+            setProblemData({ ...problemData, description: e.target.value })
+          }
+          placeholder="Пожалуйста, опишите проблему"
+          cols="30"
+          rows="8"
+        />
+        <Button onClick = { send }>Отправить</Button>
+      </form>
+    </div>
+  );
+};
+
 export default PostForm;

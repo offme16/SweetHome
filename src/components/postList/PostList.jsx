@@ -2,9 +2,8 @@ import style from "./PostList.module.css";
 import stroke from "../../assets/images/stroke.svg";
 import { useState } from "react";
 
-const PostList = ({obj}) => {     
+const PostList = ({ userData }) => {     
   const [visibleItems, setVisibleItems] = useState({});
-
   const toggleVisible = (id) => {
     setVisibleItems((prevVisibleItems) => ({
       ...prevVisibleItems,
@@ -14,17 +13,17 @@ const PostList = ({obj}) => {
 
   return (
     <div>
-      {obj.map((e) => (
+      { userData.map((e) => (
         <div className={style.container} key={e.id}>
           <div className={style.record_item}>
             <div className={style.record_info}>
               <div className={style.record_info__div}>
                 <span>Название:</span>
-                <p>{e.title}</p>
+                <p>{e.problems}</p>
               </div>
               <div className={style.record_info__div}>
                 <span>Дата обращения:</span>
-                <p>{e.date}</p>
+                <p>{e.dateOfsolution.slice(0,10)}</p>
               </div>
             </div>
             <button
@@ -41,7 +40,7 @@ const PostList = ({obj}) => {
               visibleItems[e.id] ? style.visible : ""
             }`}
           >
-            <p>{e.body}</p>
+            <p>{e.description}</p>
           </div>
         </div>
       ))}

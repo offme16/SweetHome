@@ -24,10 +24,10 @@ export const registUser = createAsyncThunk(
         USER_LOCALSTORAGE_KEY,
         JSON.stringify(response.data.userId)
       );
-      thunkAPI.dispatch(userActions.setUser(response.data));
+      thunkAPI.dispatch(userActions.setUser(response.data.userId));
       return response.data;
-    } catch (e) {
-      console.log("error");
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data);
     }
   }
 );

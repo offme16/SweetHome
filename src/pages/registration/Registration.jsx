@@ -26,9 +26,8 @@ const Registration = () => {
     });
       const onSubmit = useCallback( async () => {
         const result = await  dispatch(registUser(authData));
-        console.log(result.meta.requestStatus)
          if(result.meta.requestStatus === "fulfilled") {
-            navigate("/cabinet");
+            navigate("/");
           } else {
             alert("!!!")
           }
