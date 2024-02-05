@@ -16,7 +16,6 @@ export const userDataSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(getUserData.fulfilled, (state, action) => {
-        console.log(action.payload);
         state.isLoading = false;
         state.problemsData = action.payload;
       })

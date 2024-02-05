@@ -6,13 +6,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { registActions } from "../../store/registSlice";
 import { useCallback } from "react";
 import { registUser } from "../../store/services/registerUser";
+import { Loader } from "../../components/loader/Loader";
 
 const Registration = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const authData = useSelector(state => state.registration)
   const handleField = useCallback((value, fieldName) => {
-    dispatch(registActions.setField({value,fieldName}));
+    dispatch(registActions.setField({ value, fieldName }));
   }, [dispatch])
 
     const {
@@ -24,6 +25,7 @@ const Registration = () => {
     } = useForm({
       mode: "onBlur"
     });
+
       const onSubmit = useCallback( async () => {
         const result = await  dispatch(registUser(authData));
          if(result.meta.requestStatus === "fulfilled") {
@@ -32,9 +34,10 @@ const Registration = () => {
             alert("!!!")
           }
       },[dispatch, navigate, authData]);
+      
   return (
     <div className={style.container}>
-     <form className={style.form} method="post" onSubmit={handleSubmit(onSubmit)}>
+      { authData.isLoading ? <Loader /> : <form className={style.form} method="post" onSubmit={handleSubmit(onSubmit)}>
       <p className={style.title}>Регистрация</p>
       <p className={style.message}>Зарегистрируйтесь сейчас и получите доступ к нашему приложению.</p>
       <div className={style.flex}>
@@ -58,7 +61,7 @@ const Registration = () => {
       <p className={style.signin}>
       У вас уже есть учетная запись?<Link to={'/auth'}>Авторизоваться</Link>
       </p>
-     </form>
+     </form>}
     </div>
   );
 };

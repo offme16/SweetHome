@@ -6,19 +6,22 @@ import "react-datepicker/dist/react-datepicker.css";
 import { addProblem } from "../../store/services/addProblem";
 import { useDispatch, useSelector } from "react-redux";
 
-const PostForm = ({ create }) => {
+const PostForm = ({ create, updateList }) => {
   const [problemData, setProblemData] = useState({
     problem: "",
     date: null,
     description: "",
   });
+
   const userID = useSelector(state => state.user.userID);
   const dispatch = useDispatch();
+
   const send = async () => {
     try {
-      dispatch(addProblem({ problemData, userID }));
+      const data = await dispatch(addProblem({ problemData, userID }));
       clearInput();
-      await create();
+      create();
+      updateList();
     } catch (error) {
       console.error("Ошибка при отправке данных:", error);
     }

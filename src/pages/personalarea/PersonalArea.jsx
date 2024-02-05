@@ -7,20 +7,29 @@ import PostForm from "../../components/PostForm/PostForm";
 import PostList from "../../components/postList/PostList";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserData } from "../../store/services/getUserData";
+import { Loader } from "../../components/loader/Loader";
 const PersonalArea = () => {
     ScrollToTop();
     const [modal, setModal] = useState(false);
-    const userID = useSelector(state => state.user.userID);
+    
     const dispatch = useDispatch();
     const userData = useSelector(state => state.userData.problemsData);
+    const userID = useSelector(state => state.user.userID);
     useEffect(() => {
-        dispatch(getUserData(userID))
-    },[dispatch]);     
+    const getUser = async () => {
+      const data = await dispatch(getUserData(userID))
+    };
+    getUser();
+    },[dispatch, userID]);     
 
     const createPost =  () => {
-      setModal(false);
-        dispatch(getUserData(userID));     
+      setModal(false);   
     }
+
+    const updateList = () => {
+     dispatch(getUserData(userID));
+    }
+
   return (
     <div className={style.container}>
       <h2>Личный кабинет</h2>
@@ -28,8 +37,10 @@ const PersonalArea = () => {
           <p>Мои обращения</p>
           <Button onClick={() => setModal(true)}>Сообщить о проблеме</Button>
         </div>
-        {!!userData ? <PostList  userData={userData}/> : <p>У вас нет обращений</p>}
-        <MyModal visible={modal} setVisible={setModal}><PostForm create={createPost}/></MyModal>
+        {!!userData ? <PostList  userData={userData}/> : <p className={style.pp}>У вас нет обращений</p>}
+        <MyModal visible={modal} setVisible={setModal}>
+          <PostForm create={createPost} updateList = {updateList} />
+        </MyModal>
     </div>
   );
 };

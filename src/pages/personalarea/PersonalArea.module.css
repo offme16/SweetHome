@@ -1,7 +1,5 @@
-.container_content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.content{
+
 }
 h3{
     font-size: 30px;
@@ -19,4 +17,7 @@ h3{
 .records p{
     color: #000;
     padding: 4px 10px;
+}
+.pp{
+    height: 53vh;
 }

@@ -1,11 +1,13 @@
-.footer{
+.footer {
     height: 190px;
     display: flex;
     padding: 0 50px;
     align-items: center;
     justify-content: space-between;
     background-color: #184044;
-    margin-top: 100px;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto;
 }
 .footer__logo{
     display: flex;

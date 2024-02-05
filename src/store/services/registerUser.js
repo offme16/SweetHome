@@ -24,6 +24,7 @@ export const registUser = createAsyncThunk(
         USER_LOCALSTORAGE_KEY,
         JSON.stringify(response.data.userId)
       );
+      console.log(response.data.userId);
       thunkAPI.dispatch(userActions.setUser(response.data.userId));
       return response.data;
     } catch (error) {

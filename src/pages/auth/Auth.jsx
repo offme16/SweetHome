@@ -6,12 +6,12 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../../store/services/loginUser";
 import { authActions } from "../../store/authenticationSlice";
+import { Loader } from "../../components/loader/Loader";
 
 const Auth = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const authData = useSelector((state) => state.authentication);
-
   const handleField = useCallback((value, fieldName) => {
     dispatch(authActions.setField({ value, fieldName }));
   }, [dispatch]);
@@ -44,7 +44,8 @@ const Auth = () => {
 
   return (
     <div className={style.container}>
-      <form
+      {authData.isLoading ? <Loader /> :
+        <form
         className={style.form}
         method="post"
         onSubmit={handleSubmit(onSubmit)}
@@ -70,7 +71,8 @@ const Auth = () => {
           {errors?.password && <em>Л</em>}
         </div>
         <Button>Войти</Button>
-      </form>
+      </form> 
+      }
     </div>
   );
 };

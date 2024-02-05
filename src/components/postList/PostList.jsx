@@ -2,8 +2,13 @@ import style from "./PostList.module.css";
 import stroke from "../../assets/images/stroke.svg";
 import { useState } from "react";
 
-const PostList = ({ userData }) => {     
+const PostList = ({ userData }) => { 
   const [visibleItems, setVisibleItems] = useState({});
+
+  const sortedData = [...userData].sort((a, b) => {
+    return new Date(b.dateOfsolution) - new Date(a.dateOfsolution);
+  });
+  
   const toggleVisible = (id) => {
     setVisibleItems((prevVisibleItems) => ({
       ...prevVisibleItems,
@@ -12,8 +17,8 @@ const PostList = ({ userData }) => {
   };
 
   return (
-    <div>
-      { userData.map((e) => (
+    <div className={style.content}>
+      {sortedData.map((e) => (
         <div className={style.container} key={e.id}>
           <div className={style.record_item}>
             <div className={style.record_info}>
@@ -23,7 +28,7 @@ const PostList = ({ userData }) => {
               </div>
               <div className={style.record_info__div}>
                 <span>Дата обращения:</span>
-                <p>{e.dateOfsolution.slice(0,10)}</p>
+                <p>{e.dateOfsolution.slice(0, 10)}</p>
               </div>
             </div>
             <button
