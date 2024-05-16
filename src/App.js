@@ -11,12 +11,15 @@ import PersonalArea from "./pages/personalarea/PersonalArea";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { userActions } from "./store/userSlice";
+import Admin from "./pages/admin/Admin";
 
 function App() {
   const dispatch = useDispatch();
+  
   useEffect(() => {
     dispatch(userActions.initAuthData());
   }, [dispatch]);
+
   return (
     <BrowserRouter>
       <div className="App">
@@ -28,6 +31,7 @@ function App() {
           <Route path="/registration" element={<Registration />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/cabinet" element={<PersonalArea />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
         <Footer />
       </div>

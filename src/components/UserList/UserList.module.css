@@ -55,3 +55,8 @@ span{
     display: flex;
     gap: 10px;
 }
+.adminPanel__btns {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}

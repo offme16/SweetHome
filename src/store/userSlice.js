@@ -1,13 +1,14 @@
 import { buildCreateSlice, createSlice } from "@reduxjs/toolkit";
 import { USER_LOCALSTORAGE_KEY } from "./const/actionTypes";
 const initialState = {
-  userID: null,
+  userID: '',
 };
 export const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
     setUser: (state, action) => {
+      console.log(action.payload);
       state.userID = action.payload;
     },
     initAuthData: (state, action) => {

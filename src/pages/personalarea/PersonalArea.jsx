@@ -15,6 +15,7 @@ const PersonalArea = () => {
     const dispatch = useDispatch();
     const userData = useSelector(state => state.userData.problemsData);
     const userID = useSelector(state => state.user.userID);
+    
     useEffect(() => {
     const getUser = async () => {
       const data = await dispatch(getUserData(userID))

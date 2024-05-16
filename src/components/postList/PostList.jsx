@@ -31,14 +31,15 @@ const PostList = ({ userData }) => {
                 <p>{e.dateOfsolution.slice(0, 10)}</p>
               </div>
             </div>
-            <button
+            <div className={style.record_progress}><span>{e.progress === "in progress" ? "В процессе" : (e.progress === "done") ? "Выполнено" : "В ожидании"}</span> <button
               className={`${style.record_item__btn} ${
                 visibleItems[e.id] ? style.rotate : ""
               }`}
               onClick={() => toggleVisible(e.id)}
             >
               <img src={stroke} alt="fff" />
-            </button>
+            </button></div>
+            
           </div>
           <div
             className={`${style.record_main_info} ${

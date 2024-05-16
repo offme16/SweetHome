@@ -57,7 +57,7 @@ a {
     text-decoration: none
 }
 a:visited, a:hover, a:active {
-    color: inherit;
+    color: #19949e;
   }
 ins {
     background-color:#ff9;

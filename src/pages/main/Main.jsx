@@ -13,7 +13,7 @@ const Main = () => {
             <section className={style.container}>
                 <div className={style.container__informbox}>
                     <h2>Присоединяйтесь к SweetHome и избавьтесь от хлопот, связанных с текущим содержанием и обслуживанием дома.</h2>
-                    <NavLink to={'/login'}><Button>Присоединиться</Button></NavLink>
+                    <NavLink to={'/auth'}><Button>Присоединиться</Button></NavLink>
                 </div>
             </section>
 
