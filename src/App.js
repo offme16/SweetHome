@@ -9,10 +9,10 @@ import Registration from "./pages/registration/Registration";
 import Auth from "./pages/auth/Auth";
 import PersonalArea from "./pages/personalarea/PersonalArea";
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { userActions } from "./store/userSlice";
 import Admin from "./pages/admin/Admin";
-
+import { Toaster } from 'react-hot-toast';
 function App() {
   const dispatch = useDispatch();
   
@@ -24,6 +24,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Header />
+        <Toaster />
         <Routes>
           <Route exact path="/" element={<Main />} />
           <Route path="/price" element={<Price />} />

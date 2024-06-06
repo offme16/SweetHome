@@ -28,6 +28,7 @@ export const registUser = createAsyncThunk(
       thunkAPI.dispatch(userActions.setUser(response.data.userId));
       return response.data;
     } catch (error) {
+      console.log(error);
       return thunkAPI.rejectWithValue(error.response.data);
     }
   }

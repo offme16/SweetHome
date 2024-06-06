@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { loginUser } from "../../store/services/loginUser";
 import { authActions } from "../../store/authenticationSlice";
 import { Loader } from "../../components/loader/Loader";
+import { toast } from 'react-hot-toast';
 
 const Auth = () => {
   const dispatch = useDispatch();
@@ -28,15 +29,13 @@ const Auth = () => {
     async () => {
       try {
         const result = await dispatch(loginUser(authData));
-
         if (result.meta.requestStatus === "rejected") {
-          alert("Произошла ошибка: " + result.payload);
+          toast.error(result.payload)
         } else {
           navigate("/");
         }
       } catch (error) {
-        console.error("Произошла ошибка:", error);
-        alert("Произошла ошибка при входе!");
+        toast.error("Произошла ошибка при входе!");
       }
     },
     [dispatch, navigate, authData]
@@ -68,7 +67,7 @@ const Auth = () => {
           onChange={(e) => handleField(e.target.value, "password")}
         />
         <div className={style.error}>
-          {errors?.password && <em>Л</em>}
+          {errors?.password && <em>Поля не заполнены!</em>}
         </div>
         <Button>Войти</Button>
       </form> 

@@ -7,6 +7,7 @@ import { registActions } from "../../store/registSlice";
 import { useCallback } from "react";
 import { registUser } from "../../store/services/registerUser";
 import { Loader } from "../../components/loader/Loader";
+import { toast } from 'react-hot-toast';
 
 const Registration = () => {
   const dispatch = useDispatch();
@@ -31,7 +32,7 @@ const Registration = () => {
          if(result.meta.requestStatus === "fulfilled") {
             navigate("/");
           } else {
-            alert("!!!")
+            toast.error(result.payload);
           }
       },[dispatch, navigate, authData]);
       
