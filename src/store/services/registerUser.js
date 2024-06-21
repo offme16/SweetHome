@@ -15,6 +15,7 @@ export const registUser = createAsyncThunk(
         phonenumber: authData.phonenumber,
         address: authData.address,
         password: authData.password,
+        role: 'user'
       });
 
       if (!response.data) {

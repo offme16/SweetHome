@@ -17,7 +17,6 @@ const userAllData = [
 ]
 
 
-
 const Admin = () => {
     // const dispatch = useDispatch();
     // //const userAllData = useSelector();

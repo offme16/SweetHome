@@ -20,6 +20,7 @@ export const loginUser = createAsyncThunk(
         JSON.stringify(response.data.userid)
       );
       thunkAPI.dispatch(userActions.setUser(response.data.userid));
+      console.log(response.data);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data);
