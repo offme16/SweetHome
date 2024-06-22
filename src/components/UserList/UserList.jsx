@@ -28,8 +28,8 @@ const UserList = ({ userAllData }) => {
     });
   };
 
-  const sendInProggres = (id, progress) => {
-    dispatch(fetchProgress({ id, progress }));
+  const sendInProggres = (id, progress, userId) => {
+    dispatch(fetchProgress({ id, progress, userId }));
   };
 
   return (
@@ -80,10 +80,10 @@ const UserList = ({ userAllData }) => {
           >
             <p>{e.description}</p>
             <div className={style.adminPanel__btns}>
-              <Button onClick={() => sendInProggres(e.id, "in progress")}>
+              <Button onClick={() => sendInProggres(e.id, "in progress", e.userId)}>
                 В процессе
               </Button>
-              <Button onClick={() => sendInProggres(e.id, "done")}>
+              <Button onClick={() => sendInProggres(e.id, "done", e.userId)}>
                 Сделано
               </Button>
             </div>

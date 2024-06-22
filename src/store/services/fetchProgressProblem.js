@@ -5,12 +5,12 @@ export const fetchProgress = createAsyncThunk(
   "user/Data",
   async (fecthData, thunkAPI) => {
     try {
-        console.log(fecthData);
       const response = await axios.patch(
-        `https://localhost:7045/user/updateProblemProgress`,
+        `https://localhost:7045/api/Admin/ChangeStatus`,
         {
-          id: fecthData.id,
-          progress: fecthData.progress,
+          userId: fecthData.userId,
+          newStatus: fecthData.progress,
+          problemId: fecthData.id
         }
       );
 
