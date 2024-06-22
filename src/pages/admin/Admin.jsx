@@ -52,7 +52,6 @@ const Admin = () => {
                 </div>
                 <div className={style.record_info__div}>
                   <span>Дата обращения:</span>
-                  <p>{e.dateOfsolution.slice(0, 10)}</p>
                 </div>
                 <div className={style.record_info__div}>
                   <span>Адрес:</span>
