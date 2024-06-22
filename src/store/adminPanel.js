@@ -5,12 +5,17 @@ const initialState = {
   isLoading: false,
   error: "",
   problemsData: undefined,
+  role: '',
 };
 
 export const adminPanelSlice = createSlice({
-  name: "userData",
+  name: "adminData",
   initialState,
-  reducers: {},
+  reducers: {
+    setRole: (state, action) => {
+      state.role = action.payload;
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getUserAllData.pending, (state, action) => {

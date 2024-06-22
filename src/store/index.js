@@ -3,6 +3,7 @@ import { registReducer } from "./registSlice";
 import { userReducer } from "./userSlice";
 import { authReducer } from "./authenticationSlice";
 import { userDataReducer } from "./userDataSlice";
+import { adminPanelReducer } from "./adminPanel";
 
 export function createRootStore(initialState) {
   const rootReducer = {
@@ -10,6 +11,8 @@ export function createRootStore(initialState) {
     authentication: authReducer,
     user: userReducer,
     userData: userDataReducer,
+    admin: adminPanelReducer
+
   };
   return configureStore({
     reducer: rootReducer,

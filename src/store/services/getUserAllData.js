@@ -6,7 +6,7 @@ export const getUserAllData = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const response = await axios.get(
-        `https://localhost:7045/user/getAllProblemsByUserId`
+        `https://localhost:7045/api/Admin/GetAllProblems`
       );
 
       if (!response.data) {

@@ -8,9 +8,9 @@ import { USER_LOCALSTORAGE_KEY } from "../../store/const/actionTypes";
 import { useDispatch, useSelector } from "react-redux";
 import { userActions } from "../../store/userSlice";
 export const Header = () => {
-    const [auth, setAuth] = useState(null);
     const dispatch = useDispatch();
-    const userID = useSelector(state => state.user.userID)
+    const userID = useSelector(state => state.user.userID);
+    const role = useSelector(state => state.admin.role)
     function out() {
         dispatch(userActions.logout())
     }
@@ -25,12 +25,28 @@ export const Header = () => {
                 <ul>
                     <NavLink to={`/price`}><li>Подписки</li></NavLink>
                     <NavLink to={`/service`}><li>Наши услуги</li></NavLink>
-                    {userID ?  <> 
-                                <NavLink to={`/cabinet`}><Button>Личный кабинет</Button></NavLink>
-                                <NavLink to={`/`} className={style.logout__icon} onClick={out}><img src={logout} alt="logout"/></NavLink>
-                             </>
-                          : <NavLink to={`/registration`}><Button>Регистрация</Button></NavLink>
-                    }
+                    {userID ? (
+  <>
+    {role ? (
+      <NavLink to="/admin">
+        <Button>Личный кабинет</Button>
+      </NavLink>
+    ) : (
+      <>
+        <NavLink to="/cabinet">
+          <Button>Личный кабинет</Button>
+        </NavLink>
+        <NavLink to="/" className={style.logout__icon} onClick={out}>
+          <img src={logout} alt="logout" />
+        </NavLink>
+      </>
+    )}
+  </>
+) : (
+  <NavLink to="/registration">
+    <Button>Регистрация</Button>
+  </NavLink>
+)}
                 </ul>
             </nav>
         </header>

@@ -2,6 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { userActions } from "../userSlice";
 import { USER_LOCALSTORAGE_KEY } from "../const/actionTypes";
+import { adminPanelActions } from "../adminPanel";
 export const loginUser = createAsyncThunk(
   "login/User",
   async (authData, thunkAPI) => {
@@ -20,6 +21,7 @@ export const loginUser = createAsyncThunk(
         JSON.stringify(response.data.userid)
       );
       thunkAPI.dispatch(userActions.setUser(response.data.userid));
+      thunkAPI.dispatch(adminPanelActions.setRole(response.data.role))
       console.log(response.data);
       return response.data;
     } catch (error) {
