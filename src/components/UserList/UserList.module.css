@@ -4,9 +4,6 @@
     border-bottom: 1px solid #6a7677;
     margin-bottom: 10px;
 }
-.content{
-    min-height: 53vh;
-}
 .record_item{
     display: flex;
     justify-content: space-between;

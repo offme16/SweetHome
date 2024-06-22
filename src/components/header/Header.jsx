@@ -3,8 +3,6 @@ import icon from "../../assets/images/homeicon.svg"
 import { Button } from "../UI/MyButton/Button";
 import { NavLink } from "react-router-dom";
 import logout from "../../assets/images/logout_icon.png"
-import { useState } from "react";
-import { USER_LOCALSTORAGE_KEY } from "../../store/const/actionTypes";
 import { useDispatch, useSelector } from "react-redux";
 import { userActions } from "../../store/userSlice";
 export const Header = () => {
@@ -28,9 +26,14 @@ export const Header = () => {
                     {userID ? (
   <>
     {role ? (
+      <>
       <NavLink to="/admin">
         <Button>Личный кабинет</Button>
       </NavLink>
+              <NavLink to="/" className={style.logout__icon} onClick={out}>
+              <img src={logout} alt="logout" />
+            </NavLink>
+            </>
     ) : (
       <>
         <NavLink to="/cabinet">

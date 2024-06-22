@@ -4,7 +4,7 @@ import { getUserAllData } from "./services/getUserAllData";
 const initialState = {
   isLoading: false,
   error: "",
-  problemsData: undefined,
+  problemsData: '',
   role: '',
 };
 

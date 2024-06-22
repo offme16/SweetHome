@@ -11,7 +11,7 @@ export const addProblem = createAsyncThunk(
           problem: problemData.problem,
           description: problemData.description,
           dateOfSolution: problemData.date,
-          userId: userID,
+          userId: userID[0],
         }
       );
 

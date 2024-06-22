@@ -20,8 +20,8 @@ export const loginUser = createAsyncThunk(
         USER_LOCALSTORAGE_KEY,
         JSON.stringify(response.data.userid)
       );
-      thunkAPI.dispatch(userActions.setUser(response.data.userid));
-      thunkAPI.dispatch(adminPanelActions.setRole(response.data.role))
+      thunkAPI.dispatch(userActions.setUser(response.data.userId));
+      thunkAPI.dispatch(adminPanelActions.setRole(response.data.isAdministrator))
       console.log(response.data);
       return response.data;
     } catch (error) {

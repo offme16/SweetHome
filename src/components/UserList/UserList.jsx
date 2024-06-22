@@ -28,8 +28,10 @@ const UserList = ({ userAllData }) => {
     });
   };
 
-  const sendInProggres = (id, progress, userId) => {
-    dispatch(fetchProgress({ id, progress, userId }));
+   const sendInProggres = (id, progress, userId) =>  {
+   async () => {
+     await dispatch(fetchProgress({ id, progress, userId }));
+    }
   };
 
   return (
